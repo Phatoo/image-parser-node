@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app>
+    <head>
+        <meta charset="utf-8">
+        <title>image list</title>
+
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+        <script src="/js/lib/angular/angular.js"></script>
+        <script src="/js/imageList.js"></script>
+    </head>
+    <body>
+        <div ng-controller="imageList">
+            <button ng-click="fetch()">Get images!</button>
+            <div ng-repeat="image in images">
+                <img class='list-item' ng-src="{{image.url}}">
+            </div>
+
+        </div>
+    </body>
+</html>
