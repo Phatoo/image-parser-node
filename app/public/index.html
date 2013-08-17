@@ -11,9 +11,13 @@
     </head>
     <body>
         <div ng-controller="imageList">
+            Type url for parsing:<input ng-model="url">
             <button ng-click="fetch()">Get images!</button>
+            {{message}}
             <div ng-repeat="image in images">
                 <img class='list-item' ng-src="{{image.url}}">
+                <button ng-click="voteUp(image.url)">Cool!</button>
+                <button ng-click="voteDown(image.url)">Poorly :(</button>
             </div>
 
         </div>

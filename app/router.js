@@ -1,4 +1,6 @@
+var util = require('util');
 
+var images = require("./controller/images");
 
 function router(app){
 
@@ -9,7 +11,11 @@ function router(app){
         res.end(index_html)
 	})	
 
-	app.get("/images", require("./controller/images").getImages)
+	// console.log(util.inspect(images, false, null));
+
+	app.get("/images", images.getImages);
+	app.post("/images/voteup", images.voteUp);
+	app.post("/images/votedown", images.voteDown);
 }
 
 module.exports = router;
